@@ -1,6 +1,6 @@
 # Planetary SLAM
 
-A modular LiDAR SLAM framework based on A-LOAM, with enhanced features for planetary environments. This project implements 3D IMLS-SLAM and introduces tensor voting for better point cloud processing in sparse, feature-less environments.
+A modular LiDAR SLAM(currently only odometry part) framework based on A-LOAM, with enhanced features for planetary environments. This project implements 3D IMLS-SLAM and introduces tensor voting for better point cloud processing in sparse, feature-less environments.
 
 ![Framework](framework.png)
 
@@ -20,7 +20,7 @@ Each component can be replaced with different methods via configuration.
 - Multiple solving methods including RANSAC, Weighted LS, etc.
 
 - **Configurable**: All parameters can be configured through `config.json`
-- **Visualization**: Supports intermediate results visualization and timing analysis
+- **Visualization**: Supports intermediate results saving and timing analysis
 - **ROS Integration**: Compatible with ROS Melodic
 
 ## Prerequisites
@@ -43,7 +43,8 @@ sudo apt-get install \
   libceres-dev \
   libgoogle-glog-dev \
   libboost-all-dev \
-  libomp-dev
+  libomp-dev \
+  nlohmann-json-dev
 
 # Additional libraries
 # libpointmatcher
@@ -128,11 +129,3 @@ rosbag play your_kitti_sequence.bag
 ## Notes
 
 This project was initially designed to address sparse and featureless point clouds in planetary environments using IMLS and tensor voting. While the current results in planetary environments are not optimal, the framework and implementations are shared for academic purposes and further development.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit pull requests or open issues for discussions.
-
-## License
-
-[Add appropriate license information]
