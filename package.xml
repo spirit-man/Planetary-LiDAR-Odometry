@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<package>
+  <name>planetary_slam</name>
+  <version>0.0.0</version>
+
+  <description>
+    This is a LiDAR SLAM system designed for planetary environments.
+    <!-- To add more descriptions about functions and usage -->
+  </description>
+
+  <maintainer email="gy1361710653@gmail.com">Gao Yang</maintainer>
+
+  <license>BSD</license>
+
+  <author email="gy1361710653@gmail.com">Gao Yang</author>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>nav_msgs</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>  
+  <build_depend>rosbag</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>tf</build_depend>
+  <build_depend>image_transport</build_depend>
+  <build_depend>visualization_msgs</build_depend>
+  <build_depend>teaserpp</build_depend>
+  
+  <run_depend>geometry_msgs</run_depend>
+  <run_depend>nav_msgs</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>rosbag</run_depend>
+  <run_depend>tf</run_depend>
+  <run_depend>image_transport</run_depend>
+  <run_depend>visualization_msgs</run_depend>
+
+  <export>
+  </export>
+</package>

@@ -1,0 +1,177 @@
+{
+    "scan_registration": {
+        "compute_normal_method": {
+            "_comment": "choose method: pointcloud(pca or cross_product) or range_image(FALS or SRI)",
+            "format": "pointcloud", 
+            "method": "pca",
+            "pca": {
+                "_comment": "choose neighbor_scan nearest points: kdtree or index",
+                "window_size": 3,
+                "iter_step": 1,
+                "knn_distance_threshold": 10,
+                "neighbor_scan": "kdtree",
+                "plane_constraint": {
+                    "distance_threshold": 0.02,
+                    "valid_points_threshold": 0.8
+                }
+            },
+            "cross_product": {
+                "_comment": "choose neighbor_scan nearest points: kdtree or index",
+                "knn_distance_threshold": 1,
+                "neighbor_scan": "index"
+            },
+            "FALS": {
+                "window_size": 3
+            },
+            "SRI": {
+                "window_size": 3
+            }
+        },
+        "presample_method": {
+            "_comment": "presample points, choose method: tensor_voting, geometric_features or curvature",
+            "method": "geometric_features",
+            "tensor_voting": {
+                "_comment": "use normal to initialize tensor voting by default",
+                "k": 50,
+                "sigma": 0.2
+            },
+            "geometric_features":{
+                "_comment": "use eigenvalues to compute geometric features, sample by planarity",
+                "planarity_threshold": 0.05
+            },
+            "curvature": {
+                "_comment": "compute curvature by difference",
+                "curvature_threshold": 0.02,
+                "window_size": 5
+            }
+        },
+        "sample_method": {
+            "_comment": "use tv decides how to seperate plane points for sampling; choose method: three_axis, random, normal, major_axis",
+            "method": "major_axis",
+            "three_axis": {
+                "points_per_list": 200
+            },
+            "random": {
+                "max_points": 2000
+            },
+            "normal": {
+                "_comment": "choose strategy: FPS or random",
+                "azimuth_bins": 8,
+                "elevation_bins": 8,
+                "min_points_per_bin": 20,
+                "max_points_per_bin": 100,
+                "sampling_strategy": "random"
+            },
+            "major_axis": {
+                "_comment": "choose strategy: FPS or random",
+                "r": 0.5,
+                "r_proj": 1.5,
+                "max_total_points": 2000,
+                "azimuth_bins": 8,
+                "elevation_bins": 8,
+                "min_points_per_bin": 20,
+                "max_points_per_bin": 200,
+                "sampling_strategy": "FPS"
+            }
+        },
+        "model":{
+            "_comment": "choose historical models for IMLS: all_points or plane_points",
+            "use_all_points": true
+        }
+
+    },
+    "laser_odometry": {
+        "max_queue_size": 1,
+        "transform_normal": false,
+        "matching_method":{
+            "_comment": "choose method: plane_ICP, IMLS",
+            "method": "IMLS",
+            "correspond_number": 6,
+            "IMLS": {
+                "h": 1,
+                "r": 3,
+                "use_tensor_voting": {
+                    "_comment": "parameters for function VoteForAny",
+                    "enabled": false,
+                    "k": 50,
+                    "sigma": 0.2,
+                    "distance_threshold": 0.6
+                },
+                "get_normals":{
+                    "_comment": "true: use normals in input cloud, do not recompute",
+                    "enabled": true,
+                    "r_normal": 1,
+                    "search_number_normal": 10
+                },
+                "use_projected_distance": {
+                    "enabled": false,
+                    "r_proj": 0.8
+                },
+                "normal_angle_constraint":{
+                    "enabled": true,
+                    "angle_diff_threshold": 30
+                },
+                "IMLS function": {
+                    "_comment": "parameters for function ImplicitMLSFunction",
+                    "search_number": 20
+                }
+            },
+            "plane_ICP":{                
+                "r": 1.5,
+                "use_projected_distance":{
+                    "enabled": false,
+                    "r_proj": 0.8
+                },
+                "normal_angle_constraint":{
+                    "enabled": true,
+                    "angle_diff_threshold": 30
+                }
+            }
+        },
+        "solve_method": {
+            "_comment": "choose method: Ceres, LS, RANSAC, ICP, Teaser",
+            "method": "RANSAC",
+            "iterations": 30,
+            "delta_dist_threshold": 0.001,
+            "delta_angle_threshold": 0.0001745353,
+            "Ceres": {
+                "max_iterations": 20
+            },
+            "LS": {
+                "threshold": 0.02
+            },
+            "RANSAC": {
+                "_comment": "choose final solve method: LS, Weighted LS or DRPM",
+                "max_iterations": 5000,
+                "distance_threshold": 0.8,
+                "min_inliers_percentage": 0.95,
+                "huber_threshold": 0.648,
+                "final_solve_method": "DRPM",
+                "LS_threshold": 0.02,
+                "DRPM_threshold": 0.05,
+                "DRPM_stdev_points": 0.02,
+                "DRPM_stdev_normals": 0.05
+            },
+            "ICP":{
+                "max_iterations": 1000,
+                "t_epsilon": 1e-8,
+                "e_epsilon": 1e-8
+            },
+            "Teaser":{
+                "noise_bound": 0.01,
+                "estimate_scaling": false,
+                "rotation_max_iterations": 1000,
+                "rotation_gnc_factor": 1.4,
+                "rotation_estimation_algorithm": "GNC_TLS",
+                "rotation_cost_threshold": 0.005,
+                "use_max_clique": true,
+                "kcore_heuristic_threshold": 0.5
+            }
+        }
+    },
+    
+    "saver": {
+        "_comment": "mkdir under dir record first: mkdir record && cd record && mkdir matched_points pca_markers pca_markers_2 pca_markers_2_surface ref_normal_markers dp_cloud dp_surface_cloud dp_surface_cloud_target pca_markers_surface pcl_surface_cloud pcl_cloud",
+        "output_dir": "/mnt/hgfs/SharedFolderWithUbuntu18.04/dataset/AMEDS/record/"
+    }
+}
