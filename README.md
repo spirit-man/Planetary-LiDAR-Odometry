@@ -12,7 +12,7 @@ A modular LiDAR SLAM(currently only odometry part) framework based on A-LOAM, wi
   - Sampling
   - Matching
   - Solving
-  Each component can be replaced with different methods via configuration.
+Each component can be replaced with different methods via configuration.
 
 - **Enhanced Algorithms**:
   - 3D IMLS-SLAM implementation (first open-source 3D version)
