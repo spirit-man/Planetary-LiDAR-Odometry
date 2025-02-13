@@ -7,17 +7,17 @@ A modular LiDAR SLAM(currently only odometry part) framework based on A-LOAM, wi
 ## Features
 
 - **Modular Design**: The framework is divided into five main components:
-- Normal Vector Computation
-- Pre-sampling
-- Sampling
-- Matching
-- Solving
-Each component can be replaced with different methods via configuration.
+  - Normal Vector Computation
+  - Pre-sampling
+  - Sampling
+  - Matching
+  - Solving
+  Each component can be replaced with different methods via configuration.
 
 - **Enhanced Algorithms**:
-- 3D IMLS-SLAM implementation (first open-source 3D version)
-- Extended tensor voting with decomposed tensor voting from set A to set B
-- Multiple solving methods including RANSAC, Weighted LS, etc.
+  - 3D IMLS-SLAM implementation (first open-source 3D version)
+  - Extended tensor voting with decomposed tensor voting from set A to set B
+  - Multiple solving methods including RANSAC, Weighted LS, etc.
 
 - **Configurable**: All parameters can be configured through `config.json`
 - **Visualization**: Supports intermediate results saving and timing analysis
