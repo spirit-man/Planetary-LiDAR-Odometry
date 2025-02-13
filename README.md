@@ -6,14 +6,12 @@ A modular LiDAR SLAM(currently only odometry part) framework based on A-LOAM, wi
 
 ## Features
 
-- **Modular Design**: The framework is divided into five main components:
+- **Modular Design**: The framework is divided into five main components, each component can be replaced with different methods via configuration:
   - Normal Vector Computation
   - Pre-sampling
   - Sampling
   - Matching
   - Solving
-
-Each component can be replaced with different methods via configuration.
 
 - **Enhanced Algorithms**:
   - 3D IMLS-SLAM implementation (first open-source 3D version)
