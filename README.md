@@ -74,6 +74,7 @@ sudo make install
 
 ### Datasets
 - KITTI Dataset (ROS bag format)
+- Planetary Scenes: AMEDS (Arches Mount Etna) Dataset and Erfoud Dataset (ROS bag format) (Tested but yielded suboptimal results)
 - Supports direct processing of KITTI odometry dataset converted to ROS bag format
 - Data format: `/velodyne_points` topic (sensor_msgs/PointCloud2)
 
