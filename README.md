@@ -135,16 +135,13 @@ This project was initially designed to address sparse and featureless point clou
 This work builds upon the following open-source projects and implementations:
 
 ### Key Dependencies
-- **[A-LOAM]** Advanced Lidar Odometry and Mapping framework  
-  (https://github.com/HKUST-Aerial-Robotics/A-LOAM) 
+- **[A-LOAM](https://github.com/HKUST-Aerial-Robotics/A-LOAM)** Advanced Lidar Odometry and Mapping framework  
   _Feature extraction and scan matching implementation reference_
 
-- **[imls-slam]** Implicit Moving Least Squares (IMLS) SLAM  
-  (https://github.com/sunmiaozju/shenlan-laser-slam-2d)  
+- **[imls-slam](https://github.com/sunmiaozju/shenlan-laser-slam-2d)** Implicit Moving Least Squares (IMLS) SLAM  
   _Surface reconstruction techniques for sparse point clouds_
 
-- **Tensor Voting** from libpointmatcher  
-  (https://github.com/norlab-ulaval/libpointmatcher)  
+- **[Tensor Voting](https://github.com/norlab-ulaval/libpointmatcher)** from libpointmatcher   
   _Feature enhancement implementation in geometric processing_
 
 ### Disclaimer
