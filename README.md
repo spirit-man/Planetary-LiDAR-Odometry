@@ -136,15 +136,15 @@ This work builds upon the following open-source projects and implementations:
 
 ### Key Dependencies
 - **[A-LOAM]** Advanced Lidar Odometry and Mapping framework  
-  `<https://github.com/HKUST-Aerial-Robotics/A-LOAM>`  
+  (https://github.com/HKUST-Aerial-Robotics/A-LOAM) 
   _Feature extraction and scan matching implementation reference_
 
 - **[imls-slam]** Implicit Moving Least Squares (IMLS) SLAM  
-  `<https://github.com/sunmiaozju/shenlan-laser-slam-2d>`  
+  (https://github.com/sunmiaozju/shenlan-laser-slam-2d)  
   _Surface reconstruction techniques for sparse point clouds_
 
 - **Tensor Voting** from libpointmatcher  
-  `<https://github.com/norlab-ulaval/libpointmatcher>`  
+  (https://github.com/norlab-ulaval/libpointmatcher)  
   _Feature enhancement implementation in geometric processing_
 
 ### Disclaimer
