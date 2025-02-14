@@ -129,3 +129,23 @@ rosbag play your_kitti_sequence.bag
 ## Notes
 
 This project was initially designed to address sparse and featureless point clouds in planetary environments using IMLS and tensor voting. While the current results in planetary environments are not optimal, the framework and implementations are shared for academic purposes and further development.
+
+## Acknowledgements
+
+This work builds upon the following open-source projects and implementations:
+
+### Key Dependencies
+- **[A-LOAM]** Advanced Lidar Odometry and Mapping framework  
+  `<https://github.com/HKUST-Aerial-Robotics/A-LOAM>`  
+  _Feature extraction and scan matching implementation reference_
+
+- **[imls-slam]** Implicit Moving Least Squares (IMLS) SLAM  
+  `<https://github.com/sunmiaozju/shenlan-laser-slam-2d>`  
+  _Surface reconstruction techniques for sparse point clouds_
+
+- **Tensor Voting** from libpointmatcher  
+  `<https://github.com/norlab-ulaval/libpointmatcher>`  
+  _Feature enhancement implementation in geometric processing_
+
+### Disclaimer
+The code in this repository is provided "as is" for educational and research purposes. The authors make no warranties regarding completeness, reliability, or suitability for any purpose. Please contact the authors for commercial use inquiries.
