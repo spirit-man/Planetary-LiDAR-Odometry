@@ -134,7 +134,6 @@ This project was initially designed to address sparse and featureless point clou
 
 This work builds upon the following open-source projects and implementations:
 
-### Key Dependencies
 - **[A-LOAM](https://github.com/HKUST-Aerial-Robotics/A-LOAM)** Advanced Lidar Odometry and Mapping framework  
   _Feature extraction and scan matching implementation reference_
 
