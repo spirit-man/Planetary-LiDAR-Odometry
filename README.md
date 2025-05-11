@@ -1,4 +1,4 @@
-# Planetary SLAM
+# Planetary-LiDAR-Odometry-Modular
 
 A modular LiDAR SLAM(currently only odometry part) framework based on A-LOAM, with enhanced features for planetary environments. This project implements 3D IMLS-SLAM and introduces tensor voting for better point cloud processing in sparse, feature-less environments.
 
